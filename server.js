@@ -1,12 +1,12 @@
-const express=require('express');
-const dotenv=require('dotenv');
-const connectDB=require('./db');
-const programCoursesRoutes = require('./routes/programCoursesRoutes'); 
-const  mailRoutes = require('./routes/contactFormsRoutes'); 
+const express = require('express');
+const dotenv = require('dotenv');
+const connectDB = require('./db');
+const programCoursesRoutes = require('./routes/programCoursesRoutes');
+const mailRoutes = require('./routes/contactFormsRoutes');
 
 dotenv.config();
 
-const app=express();
+const app = express();
 //connect to MongoDB
 connectDB();
 //middleware to parse json
@@ -14,12 +14,11 @@ app.use(express.json());
 
 // Route setup
 app.use('/api', programCoursesRoutes);
-app.use('/api/messages', mailRoutes);         
+app.use('/api/messages', mailRoutes);
 
-
-const PORT =process.env.PORT||5000;
-app.listen(PORT,()=>{
-    console.log(`server running on port ${PORT}`)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`server running on port ${PORT}`);
 });
 //PROGRAMS and COURSES
 //GET  http://localhost:5000/api/programs                         -see all program and courses
