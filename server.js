@@ -1,8 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./db');
-const programCoursesRoutes = require('./routes/programCoursesRoutes');
-const mailRoutes = require('./routes/contactFormsRoutes');
+const programCoursesRoutes = require('./routes/programCourseRoutes');
+const mailRoutes = require('./routes/contactFormRoutes');
 
 dotenv.config();
 

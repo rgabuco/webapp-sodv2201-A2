@@ -1,4 +1,4 @@
-const contactForms = require('../models/contactForms');
+const contactForms = require('../models/contactFormsModel');
 
 //get all message from the forms
 exports.getAllMails = async (req, res) => {
