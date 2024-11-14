@@ -1,7 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
-const programController = require('../controllers/programController');
+const programController = require('../controllers/programCoursesController');
 
 // Route to get all programs
 router.get('/programs', programController.getAllPrograms);

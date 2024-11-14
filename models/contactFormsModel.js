@@ -7,4 +7,6 @@ const contactFormsSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now },
     isRead: { type: Boolean, default: false },
 });
-module.exports = mongoose.model('contactForms', contactFormsSchema);
+const ContactForm = mongoose.model('ContactForm', contactFormsSchema);
+
+module.exports = ContactForm;

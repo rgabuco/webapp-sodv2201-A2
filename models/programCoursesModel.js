@@ -28,5 +28,6 @@ const ProgramSchema = new mongoose.Schema({
     category: String,
     courses: [CourseSchema],
 });
+const Program = mongoose.model('Program', ProgramSchema);
 
-module.exports = mongoose.model('Program', ProgramSchema);
+module.exports = Program;

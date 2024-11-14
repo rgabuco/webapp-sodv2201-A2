@@ -1,7 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
-const mailController = require('../controllers/formsContactController');
+const mailController = require('../controllers/contactFormController');
 
 //get all messages from forms
 router.get('/', mailController.getAllMails);
