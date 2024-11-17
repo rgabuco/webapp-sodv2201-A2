@@ -2,7 +2,7 @@
     {
         "username": "jdoe",
         "password": "12345678",
-        "email": "john.doe@example.com",
+        "eform": "john.doe@example.com",
         "firstName": "John",
         "lastName": "Doe",
         "phone": "+123 456 7890",
@@ -57,7 +57,7 @@
     {
         "username": "asmith",
         "password": "password",
-        "email": "allan.smith@example.com",
+        "eform": "allan.smith@example.com",
         "firstName": "Allan",
         "lastName": "Smith",
         "phone": "+123 456 7890",
@@ -69,7 +69,7 @@
     {
         "username": "admin",
         "password": "admin123",
-        "email": "admin@example.com",
+        "eform": "admin@example.com",
         "firstName": "Rudy",
         "lastName": "Gabuco",
         "phone": "+123 456 7890",
@@ -81,7 +81,7 @@
     {
         "username": "submax",
         "password": "submax12",
-        "email": "submax@example.com",
+        "eform": "submax@example.com",
         "firstName": "Submax",
         "lastName": "Max",
         "phone": "+123 456 7890",

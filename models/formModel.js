@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-const contactFormsSchema = new mongoose.Schema({
+const formsSchema = new mongoose.Schema({
     username: {
         type: String,
         required: [true, 'Username is required'],
@@ -33,6 +33,6 @@ const contactFormsSchema = new mongoose.Schema({
     }
 });
 
-const ContactForm = mongoose.model('ContactForm', contactFormsSchema);
+const Form = mongoose.model('Form', formsSchema);
 
-module.exports = ContactForm;
+module.exports = Form;

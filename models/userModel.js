@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const validator = require('validator');
 
 const courseSchema = new mongoose.Schema({
     code: String,
@@ -21,7 +22,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide a username'],
         unique: true,
-        trim: true
+        trim: true,
+        minlength: [5, 'Username must be at least 5 characters long'],
+        maxlength: [50, 'Username must be at most 50 characters long']
     },
     password: {
         type: String,
@@ -34,12 +37,7 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please provide your email'],
         unique: true,
         lowercase: true,
-        validate: {
-            validator: function (v) {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-            },
-            message: props => `${props.value} is not a valid email!`
-        }
+        validate: [validator.isEmail, 'Please provide a valid email']
     },
     firstName: {
         type: String,
@@ -65,7 +63,8 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    courses: [courseSchema]
+    courses: [courseSchema],
+    default: []
 });
 
 // Encrypt password before saving the user document

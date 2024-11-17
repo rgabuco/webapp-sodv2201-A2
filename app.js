@@ -5,7 +5,7 @@ const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 const programRoutes = require('./routes/programRoutes');
 const courseRoutes = require('./routes/courseRoutes');
-const mailRoutes = require('./routes/contactFormRoutes');
+const formRoutes = require('./routes/formRoutes');
 
 const app = express();
 
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 // Route setup
 app.use('/api/v1/programs', programRoutes);
 app.use('/api/v1/courses', courseRoutes);
-app.use('/api/v1/messages', mailRoutes);
+app.use('/api/v1/forms', formRoutes);
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

@@ -16,7 +16,7 @@ const programSchema = new mongoose.Schema({
         required: [true, 'Program code is required'],
         trim: true,
         minlength: [3, 'Program code must be at least 3 characters long'],
-        maxlength: [11, 'Program code must be less than 10 characters long']
+        maxlength: [11, 'Program code must be less than 11 characters long']
     },
     description: {
         type: String,
