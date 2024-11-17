@@ -1,20 +1,11 @@
-const express = require('express');
 const dotenv = require('dotenv');
-const connectDB = require('./db');
-const programCoursesRoutes = require('./routes/programCourseRoutes');
-const mailRoutes = require('./routes/contactFormRoutes');
-
 dotenv.config();
 
-const app = express();
+const connectDB = require('./db');
+const app = require('./app');
+
 //connect to MongoDB
 connectDB();
-//middleware to parse json
-app.use(express.json());
-
-// Route setup
-app.use('/api', programCoursesRoutes);
-app.use('/api/messages', mailRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

@@ -7,7 +7,7 @@
         "startDate": "January 10, 2025",
         "endDate": "May 15, 2026",
         "fees": "$16,219 domestic / $39,507 international",
-        "category": "Software Development Programs",
+        "category": "Diploma",
         "courses": [
             {
                 "code": "CS101",
@@ -371,7 +371,7 @@
         "startDate": "January 10, 2025",
         "endDate": "Dec 30, 2025",
         "fees": "$8,254 domestic / $21,512 international",
-        "category": "Software Development Programs",
+        "category": "Post-Diploma",
         "courses": [
             {
                 "code": "PD101",
@@ -543,7 +543,7 @@
         "startDate": "January 10, 2025",
         "endDate": "Oct 30, 2025",
         "fees": "$17,324 domestic / $20,735 international",
-        "category": "Software Development Programs",
+        "category": "Certificate",
         "courses": [
             {
                 "code": "ASD101",
