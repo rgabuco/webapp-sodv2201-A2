@@ -23,14 +23,14 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please provide a username'],
         unique: true,
         trim: true,
-        minlength: [5, 'Username must be at least 5 characters long'],
+        minlength: [4, 'Username must be at least 4 characters long'],
         maxlength: [50, 'Username must be at most 50 characters long']
     },
     password: {
         type: String,
         required: [true, 'Please provide a password'],
         minlength: [8, 'Password must be at least 8 characters long'],
-        select: false
+        select: true
     },
     email: {
         type: String,
@@ -63,8 +63,10 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    courses: [courseSchema],
-    default: []
+    courses: {
+        type: [courseSchema],
+        default: []
+    }
 });
 
 // Encrypt password before saving the user document
@@ -74,11 +76,6 @@ userSchema.pre('save', async function (next) {
     this.password = await bcrypt.hash(this.password, 12);
     next();
 });
-
-// Instance method to check if the entered password is correct
-userSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
-    return await bcrypt.compare(candidatePassword, userPassword);
-};
 
 const User = mongoose.model('User', userSchema);
 

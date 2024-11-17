@@ -35,3 +35,10 @@ app.listen(PORT, () => {
 // PATCH http://localhost:5000/api/v1/forms/:id - Update a form by ID (replace :id with the ID, use JSON body)
 // DELETE http://localhost:5000/api/v1/forms/:id - Delete a form by ID (replace :id with the ID)
 
+// USERS
+// GET http://localhost:5000/api/v1/users - Get all users
+// POST http://localhost:5000/api/v1/users - Create a user (use JSON body)
+// GET http://localhost:5000/api/v1/users/:id - Get a user by ID (replace :id with the ID)
+// PATCH http://localhost:5000/api/v1/users/:id - Update a user by ID (replace :id with the ID, use JSON body)
+// DELETE http://localhost:5000/api/v1/users/:id - Delete a user by ID (replace :id with the ID)
+
