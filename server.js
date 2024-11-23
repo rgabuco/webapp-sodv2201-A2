@@ -14,6 +14,10 @@ app.listen(PORT, () => {
 //BASIC CRUD OPERATIONS
 //Run below on POSTMAN
 
+// AUTHENTICATION
+// POST http://localhost:5000/api/v1/users/login - Login a user (use JSON body)
+// GET http://localhost:5000/api/v1/users/logout - Logout a user
+
 // PROGRAMS
 // GET http://localhost:5000/api/v1/programs - Get all programs
 // POST http://localhost:5000/api/v1/programs - Create a program (use JSON body)

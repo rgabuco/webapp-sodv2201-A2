@@ -16,6 +16,7 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
 
 // Get a user by ID
 exports.getUser = catchAsync(async (req, res, next) => {
+    
     const user = await User.findById(req.params.id);
     if (!user) {
         return next(new AppError('User not found', 404));
@@ -27,6 +28,21 @@ exports.getUser = catchAsync(async (req, res, next) => {
         }
     });
 });
+
+// Get all courses of a user by ID
+exports.getUserCourses = catchAsync(async (req, res, next) => {
+    const user = await User.findById(req.params.id).populate('courses');
+    if (!user) {
+        return next(new AppError('User not found', 404));
+    }
+    res.status(200).json({
+        status: 'success',
+        data: {
+            courses: user.courses
+        }
+    });
+});
+
 
 // Create a new user
 exports.createUser = catchAsync(async (req, res, next) => {
