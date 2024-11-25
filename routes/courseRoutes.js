@@ -1,5 +1,6 @@
 const express = require('express');
 const courseController = require('../controllers/courseController');
+const authController = require('../controllers/authController');
 
 const router = express.Router();
 
@@ -7,13 +8,13 @@ const router = express.Router();
 router
     .route('/')
     .get(courseController.getAllCourses)
-    .post(courseController.createCourse);
+    .post(authController.isAdmin, courseController.createCourse); //admin only
 
 // Route to get, update, and delete a course
 router
     .route('/:id')
     .get(courseController.getCourse)
-    .patch(courseController.updateCourse)
-    .delete(courseController.deleteCourse);
+    .patch(authController.isAdmin, courseController.updateCourse) //admin only
+    .delete(authController.isAdmin, courseController.deleteCourse); //admin only
 
 module.exports = router;

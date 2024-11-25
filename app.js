@@ -18,10 +18,10 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Route setup
+app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/programs', programRoutes);
 app.use('/api/v1/courses', courseRoutes);
 app.use('/api/v1/forms', formRoutes);
-app.use('/api/v1/users', userRoutes);
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
