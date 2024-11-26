@@ -23,7 +23,7 @@ const findProgram = async (programCode, courseId) => {
 const findCourse = (program, courseId) => {
     const course = program.courses.id(courseId);
     if (!course) {
-        throw new AppError(`Course with id ${courseId} is not found in the ${program} program`, 404);
+        throw new AppError(`Course with id ${courseId} is not found in the ${program.name} program`, 404);
     }
     return course;
 };
